@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "dependency-cruiser": "^16.10.0"
+  }
+}

@@ -9,6 +9,7 @@
 - on entry of user info switch to friendlier interaction
 - organize files into folders and clean up the trash
 - see if there is a way to combine transformations (ask)
+- map all inter file links and clean up
 
 ## Done
 - fix terminal location
