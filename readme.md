@@ -11,7 +11,7 @@ To try out styling and page layout using advanced css and a little javascript
 1. item placement is tricky
 2. battled with ChatGPT 4.0 CoPilot to generate binary stream
 3. glitchy text required *display:absolute* and *Z-index:100* to work
-4. input form will be a challenge and may not be well received bu users
+4. input form will be a challenge and may not be well received by users
 ### Previews
 <video controls src="alterStatesConcept.mp4" title="Title"></video>
 ![alteredStates](alterStatesConcept.png)
