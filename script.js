@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // console.log(pi);
 
     let piDigits = "3.";
-    const lines = 5;
+    const lines = 10;
     const container = document.getElementById("tickerContainer");
 
     if (!container) {
