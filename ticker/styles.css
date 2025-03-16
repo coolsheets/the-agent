@@ -8,18 +8,20 @@ body {
 }
 
 .ticker-wrapper {
-    width: 100vw;
+    width: 35%;
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
-    overflow: hidden;
-    padding-top: 20px;
+    flex-direction: row-reverse;
+    float:right;
+   padding-top: 20px;
 }
 
 .ticker-container {
-    width: 1920px; /* Manually set width */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    float:right;
+    width: 800px; /* Manually set width */
     height: auto;
 }
 
@@ -34,7 +36,7 @@ body {
     opacity: 1;
     animation: scroll-left 10s linear infinite;
     /* background-color: rgba(255, 0, 0, 0.5); /* Red transparent background */
-    /* border: 1px solid yellow; */ */
+    /* border: 1px solid yellow; */
 }
 
 @keyframes scroll-left {
@@ -42,8 +44,8 @@ body {
         left: 100%;
         opacity: 1;
     }
-    100% {
-        left: -100%;
-        opacity: 0.2;
+    35% {
+        left: 35%;
+        opacity: 0.0;
     }
 }

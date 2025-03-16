@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     //     return sum.toString().substr(2);
     // }
+    // console.log(pi);
 
     let piDigits = "3.";
     const lines = 7;
@@ -92,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const screenWidth = getScreenWidth();
     const fontSize = 24;
     const numDigits = computeCharacterCountForWidth(screenWidth, fontSize);
-    piDigits += computePiDigit(numDigits * 5);
+    // piDigits += computePiDigit(numDigits * 5);
     console.log("Screen width:", screenWidth);
     console.log("Computed number of digits for screen width:", numDigits);
 
