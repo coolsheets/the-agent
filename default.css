@@ -1,7 +1,18 @@
+@font-face {
+  font-family: 'DotGothic16';
+  src: url('./fonts/DotGothic16.ttf') format('truetype');
+  font-family: 'RetroComputer';
+  src: url('./fonts/retro_computer_personal_use.ttf') format('truetype');  
+  font-family: '8801';
+  src: url('./fonts/8801-DKnR.ttf') format('truetype');  
+}
+
+
 * {
     /* background: #131111; */
-    color:  rgba(6, 243, 6, 0.991);
-    font-family:;
+    color:  #33c1eca1;
+    font-family:'RetroComputer', '8801', 'DotGothic16';
+    font-size:large;
 }
 
 /* * { box-sizing: border-box; }
@@ -14,7 +25,7 @@ header {
   justify-content:stretch;  
   /* align-items:stretch; */
   /* flex-basis: top; */
-  font-family:'DotGothic16', 'Inconsolata', monospace;
+  /* font-family:'DotGothic16', 'Inconsolata', monospace; */
   font-size: large;
 }
 
@@ -25,6 +36,7 @@ div {
 
 body {
   display:flex;
+  font-family:'RetroComputer', 'DotGothic16', '8801';
   flex-direction: column;
   justify-content: flex-start;
   /* background: url(../../assets/dall-e/andy-transparent.png) no-repeat top center;  */
@@ -34,7 +46,7 @@ body {
     rgba(0, 150, 0, 0.75), black 120%
   );
   height: auto;
-  font: 1.3rem Inconsolata, monospace;
+  /* font: 1.3rem '8801', monospace; */
   margin: 0;
 }
 
@@ -46,13 +58,13 @@ h1 {
   align-items:start;
   padding: 0 0 0 4rem;
   margin: 0;
-  font-family:monospace, 'DotGothic16', 'Inconsolata' ;
-  font-size: 5rem;
+  /* font-family:'DotGothic16', '8801', 'RetroComputer'; */
+  font-size: 9rem;
   color: #5b5c5e;
 }
 
 h2,p {
-  padding: 0 5%;
+  padding: 0 2%;
 }
 
 .face {
@@ -161,7 +173,9 @@ h1:after {
   border-style: double;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   border-radius: 13px;
-  background: #1D1F21; 
+  background-image: radial-gradient(
+    #1D1F21, black 180%20%
+  );  /* background: #1D1F21;  */
   box-shadow: 0px 13px 17px -6px rgba(0, 0, 0, 0.38);
 }
 
@@ -322,9 +336,10 @@ footer a:hover {
 #terminal {
   width: auto;
   height: 50rem;
-  margin: 5rem;
+  color: grey;
+  /* margin: 5rem;
   border: 10px;
   border-color: black;
-  border-radius: 10px;
+  border-radius: 10px; */
   background:#333135;
 }
