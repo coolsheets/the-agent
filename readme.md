@@ -13,5 +13,5 @@ To try out styling and page layout using advanced css and a little javascript
 3. glitchy text required *display:absolute* and *Z-index:100* to work
 4. input form will be a challenge and may not be well received bu users
 ### Previews
-<video controls src="2025-03-16 13-07-14.mkv" title="Title"></video>
-
+<video controls src="alterStatesConcept.mp4" title="Title"></video>
+![alteredStates](alterStatesConcept.png)
