@@ -9,10 +9,16 @@ $duration: 30s;
 
 header {
   display:flex;
-  align-items:start;
+  flex-direction: row;
+  justify-content:stretch;  
+  /* align-items:stretch; */
   /* flex-basis: top; */
   font-family:'DotGothic16', 'Inconsolata', monospace;
   font-size: large;
+}
+
+div {
+  width:fit-content;
 }
 
 body {
@@ -29,12 +35,13 @@ body {
 
 h1 {
   display:flex;
+  width:fit-content;
   align-items:start;
   padding: 0 0 0 4rem;
   margin: 0;
   font-family:monospace, 'DotGothic16', 'Inconsolata' ;
   font-size: 5rem;
-  color: #fefcfe;
+  color: #5b5c5e;
 }
 
 h2,p {
