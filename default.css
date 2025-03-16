@@ -16,24 +16,14 @@
 }
 
 * {
-    /* background: #131111; */
-    /* color:  #33c1eca1; */
     font-family:'RetroComputer', '8801', 'DotGothic16';
-    /* font-size:large; */
 }
-
-/* * { box-sizing: border-box; }
-$duration: 30s; */
 
 header {
   height: 310px;
   display:flex;
   flex-direction: row;
   justify-content:flex-start;
-    
-  /* align-items:stretch; */
-  /* flex-basis: top; */
-  /* font-family:'DotGothic16', 'Inconsolata', monospace; */
   font-size: large;
 }
 
@@ -44,34 +34,28 @@ div {
 
 body {
   font-family:'RetroComputer', 'DotGothic16', '8801';
-  /* display:flex;
-  flex-direction: column; */
   align-content: flex-start;
-  /* background: url(../../assets/dall-e/andy-transparent.png) no-repeat top center;  */
   padding-bottom: 5rem;
   background-color: black;
   background-image: radial-gradient(
     rgba(0, 150, 0, 0.75), black 120%
   );
   height: auto;
-  /* font: 1.3rem '8801', monospace; */
   margin: 0;
 }
 
 h1 {
-  /* height:fit-content; */
   display:flex;
   width:fit-content;
-  /* flex-wrap: wrap;   */
   align-items:start;
   padding: 7rem 0 0 4rem;
   margin: 0;
-  /* font-family:'DotGothic16', '8801', 'RetroComputer'; */
   font-size: 7rem;
   color: var(--floGreen);
   position:absolute;
   z-index:100;
-/* add Glitch from */
+
+/* add Glitch from https://1stwebdesigner.com/trippy-css-distortion-effects*/
 animation: glitch1 2.5s infinite;
 }
 
@@ -80,7 +64,6 @@ h1:nth-child(2) {
   animation: glitch2 2.5s infinite;
   position:absolute;
   z-index:100;
-  /* padding: -5rem 0 0 4rem; */
 }
 
 h1:nth-child(3) {
@@ -89,6 +72,7 @@ h1:nth-child(3) {
   position:absolute;
   z-index:100;
 }
+
 /*Keyframes*/
 
 @keyframes glitch1 {
@@ -268,7 +252,6 @@ h2,p {
   margin-left: auto;
   margin-right: auto;  
   justify-content:center;
-  /* float:center; */
   max-width: 70%;
   min-width: 30%;
   z-index: 1;
@@ -279,7 +262,7 @@ h2,p {
   color: rgba(6, 243, 6, 0.991);
 }
 
-/* From ticker/styles.css */
+/* From ticker/styles.css this took a lot of effort battling with ChatGPT 4.0 CoPilot*/
 .ticker-wrapper {
   width: 35%;
   height: 100vh;
@@ -287,8 +270,6 @@ h2,p {
   flex-direction: row-reverse;
   float:right;
   z-index: -1;
- /* padding-top: 100px;
- margin-top: 50px; */
 }
 
 .ticker-container {
@@ -302,7 +283,6 @@ h2,p {
 
 .scrolling-text {
   position: absolute;
-  /* bottom: 10px; */
   white-space: nowrap;
   font-size: 24px;
   color: #00ff00;
@@ -310,8 +290,6 @@ h2,p {
   left: 100%; /* Start off-screen */
   opacity: 1;
   animation: scroll-left 10s linear infinite;
-  /* background-color: rgba(255, 0, 0, 0.5); /* Red transparent background */
-  /* border: 1px solid yellow; */
 }
 
 @keyframes scroll-left {
@@ -328,36 +306,6 @@ h2,p {
 /* Terminal Window from https://codepen.io/nths/pen/VpLdMK */
 @import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500");
 
-/* :root {
-  --blink-color : grey;
-  --floGreen: ;
-
-} */
-/*
-body {
-  background-color: white;
-  font-family: "Quicksand", sans-serif;
-}
-
-h1 {
-  padding: 50px 0;
-  margin: 0;
-  color: #bdc3c7;
-  text-align: center;
-  font-size: 60px;
-  letter-spacing: -2px;
-}
-
-h1:after {
-  display: inline-block;
-  content: "";
-  width: 18px;
-  height: 18px;
-  background-color: #1DC8FE;
-  border-radius: 100%;
-  margin-left: 5px;
-}
-*/
 #terminal {
   min-height: 700px;
   min-width: 85lvw;
@@ -368,31 +316,19 @@ h1:after {
   border-style: double;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   border-radius: 13px;
-  background-image: radial-gradient(
-    #1D1F21, black 180%20%
-  );  /* background: #1D1F21;  */
+  background-image: radial-gradient(#1D1F21, black 180%20%);
   box-shadow: 0px 13px 17px -6px rgba(0, 0, 0, 0.38);
   position: absolute;
     z-index: 100;
 
   letter-spacing: 0.05rem;
-  /* from W3Schools input form */
+  
+  /* from W3Schools input form NEEDS WORK*/
 
 }
 
-/* #terminal {
-  width: auto;
-  height: 50rem;
-  margin: 5rem;
-  border: 10px;
-  border-color: black;
-  border-radius: 10px;
-  background:rgb(39, 39, 39);
-} */
-
 #terminal:hover {
   transform: scale(1.1);
-  /* translate3d(0,-10px,0); */
   box-shadow: 0px 38px 90px -38px rgba(0, 0, 0, 0.45);
 }
 
@@ -402,42 +338,6 @@ h1:after {
   font-size: 13px;
 }
 
-/* 
-.terminal-bar {
-  background: rgba(225, 225, 225, 0.75);
-
-  height: 35px;
-  line-height: 36px;
-  padding-left: 4px;
-  padding-top: 1px;
-}
-
-.terminal-bar .circle {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  display: inline-block;
-  border: 1px solid
-}
-
-.terminal-bar .circle.circle-red {
-  background: #FF0040;
-  border-color: #d73031;
-  margin: 0 2px;
-}
-
-.terminal-bar .circle.circle-orange {
-  background: #FFCF00;
-  border-color: #d7911e;
-  margin: 0 2px;
-}
-
-.terminal-bar .circle.circle-green {
-  background: #00E567;
-  border-color: #23a124;
-  margin: 0 2px;
-}
-*/
 .terminal-body {
   padding: 8px;
   background: darkgray;
@@ -454,7 +354,6 @@ h1:after {
   color: grey;
   display: inline-block;
   height: 1.1em;
-  /* margin-top: -4px; */
   width: 0.5em;
   vertical-align: bottom;
   -webkit-animation: 1s blink step-end infinite;

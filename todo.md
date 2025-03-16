@@ -3,10 +3,9 @@
 ## In progress
 
 ## To do list
-- fix terminal location
-- enable user input via terminal
+- enable user input via terminal (seek help)
 - make media friendly
-- select better fonts
 
 ## Done
-
+- fix terminal location
+- select better fonts
