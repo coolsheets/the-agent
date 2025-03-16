@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Ticker</title>
+    <style>
+        body {
+            /* background-color: black;
+            color: white; */
+            font-family: monospace;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ticker-wrapper {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            overflow: hidden;
+            padding-top: 20px;
+        }
+
+        .ticker-container {
+            width: 1920px; /* Manually set width */
+            height: auto;
+        }
+
+        .scrolling-text {
+            position: absolute;
+            white-space: nowrap;
+            font-size: 24px;
+            color: #00ff00;
+            display: block;
+            left: 100%; /* Start off-screen */
+            opacity: 1;
+            animation: scroll-left 10s linear infinite;
+            /* background-color: rgba(255, 0, 0, 0.5); /* Red transparent background */
+            /* border: 1px solid yellow; */ */
+        }
+
+        @keyframes scroll-left {
+            0% {
+                left: 100%;
+                opacity: 1;
+            }
+            100% {
+                left: -100%;
+                opacity: 0.2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ticker-wrapper">
+        <div class="ticker-container" id="tickerContainer"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/big.js/6.2.1/big.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("DOM fully loaded and parsed");
+
+            function getScreenWidth() {
+                return window.innerWidth;
+            }
+
+            function computeCharacterCountForWidth(screenWidth, fontSize) {
+                const avgCharWidth = fontSize * 0.6;
+                return Math.floor(screenWidth / avgCharWidth);
+            }
+
+            function computePiDigit(n) {
+                Big.DP = n + 2; // Set decimal precision
+                let pi = new Big(0);
+                let one = new Big(1);
+
+                for (let k = 0; k <= n; k++) {
+                    let term = one.div(new Big(16).pow(k)).times(
+                        new Big(4).div(new Big(8).times(k).plus(1))
+                        .minus(new Big(2).div(new Big(8).times(k).plus(4)))
+                        .minus(new Big(1).div(new Big(8).times(k).plus(5)))
+                        .minus(new Big(1).div(new Big(8).times(k).plus(6)))
+                    );
+                    pi = pi.plus(term);
+                }
+
+                return pi.toString().substring(2, n + 2); // Remove "3." at the start
+            }
+            //     return sum.toString().substr(2);
+            // }
+
+            let piDigits = "3.";
+            const lines = 5;
+            const container = document.getElementById("tickerContainer");
+
+            if (!container) {
+                console.error("Ticker container not found!");
+                return;
+            }
+
+            const screenWidth = getScreenWidth();
+            const fontSize = 24;
+            const numDigits = computeCharacterCountForWidth(screenWidth, fontSize);
+            piDigits += computePiDigit(numDigits * 5);
+            console.log("Screen width:", screenWidth);
+            console.log("Computed number of digits for screen width:", numDigits);
+
+            function createScrollingText(lineIndex) {
+                let scrollingText = document.createElement("div");
+                scrollingText.classList.add("scrolling-text");
+                scrollingText.textContent = piDigits;
+                scrollingText.style.animationDuration = `${Math.random() * (12 - 5) + 5}s`;
+                scrollingText.style.animationDelay = `${lineIndex * 2}s`;
+                scrollingText.style.top = `${lineIndex * 30}px`;
+
+                container.appendChild(scrollingText);
+                console.log("Added scrolling text for line", lineIndex, "Content:", scrollingText.textContent);
+            }
+
+            for (let i = 0; i < lines; i++) {
+                createScrollingText(i);
+            }
+
+            // **Force DOM Reflow to Ensure Animation Works**
+            setTimeout(() => {
+                document.querySelectorAll(".scrolling-text").forEach(el => {
+                    el.style.display = "block";
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>

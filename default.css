@@ -1,0 +1,59 @@
+* {
+    /* background: #131111; */
+    color:  rgba(6, 243, 6, 0.991);
+    font-family:;
+}
+
+* { box-sizing: border-box; }
+$duration: 30s;
+
+header {
+  display:flex;
+  align-items:start;
+  /* flex-basis: top; */
+  font-family:'DotGothic16', 'Inconsolata', monospace;
+  font-size: large;
+}
+
+body {
+  /* background: url(../../assets/dall-e/andy-transparent.png) no-repeat top center;  */
+  padding-bottom: 5rem;
+  background-color: black;
+  background-image: radial-gradient(
+    rgba(0, 150, 0, 0.75), black 120%
+  );
+  height: 100vh;
+  font: 1.3rem Inconsolata, monospace;
+  margin: 0;
+}
+
+h1 {
+  display:flex;
+  align-items:start;
+  padding: 0 0 0 4rem;
+  margin: 0;
+  font-family:monospace, 'DotGothic16', 'Inconsolata' ;
+  font-size: 5rem;
+  color: #fefcfe;
+}
+
+h2,p {
+  padding: 0 5%;
+}
+
+.face {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;  
+  justify-content:center;
+  /* float:center; */
+  max-width: 50%;
+  min-width: 30%;
+
+}
+
+.binary {
+  color: rgba(6, 243, 6, 0.991);
+}
