@@ -329,7 +329,8 @@ h2,p {
 
 #terminal:hover {
   transform: scale(1.1);
-  box-shadow: 0px 38px 90px -38px rgba(0, 0, 0, 0.45);
+  transform: translateY(-380px);
+  box-shadow: 150px 38px 90px 0px rgba(0, 0, 0, 0.45);
 }
 
 .terminal-window {
