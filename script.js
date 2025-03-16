@@ -1,51 +1,75 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM fully loaded and parsed");
 
-    function computePiDigit(n) {
-        let sum = 0;
-        for (let k = 0; k <= n; k++) {
-            sum += (1 / Math.pow(16, k)) * 
-                   ((4 / (8 * k + 1)) - (2 / (8 * k + 4)) - 
-                    (1 / (8 * k + 5)) - (1 / (8 * k + 6)));
-        }
-        return sum.toString().substr(2); // Remove leading "3."
+    const binaryPI = "110010010000111111011010101000100110100100110011011110100011101000101111100001011011010001001000101011110011101011011110000101000001001101000010000001010101001011110001110001000010011110110010110010101011000011110000011011100100110101110011101010100110110011001110100000101011010101011101100110100001110000101000101011001100100101110101010011011010001011011101010101100001110001011110101101011000011011011011011000101011110011011011011110110001000110011001100110001100100001000110100110000101000000010011010001010011100100010010001001001010000010100110110100101010011101101110101010011101010100011110010001100100010000011100011000101011011010100110001101010101100000010011100000011000110001000000110100110110011101101100101011101110110100110010000100010011001011000100001010011011000101010001001011000101011010010001001011101101011010100011001101011110110010101110110011000010011001011100101100011000001000010000101010001000011101101000100101011011110110110010101110101010101010010110110101101101110011110000011110100011101000011101010110101010000001110110110011011011"
+
+    function getScreenWidth() {
+        return window.innerWidth;
     }
 
-    let piDigits = "3."; // Start with 3.
-    const lines = 5;
-    const wrapper = document.getElementById("tickerWrapper");
+    function computeCharacterCountForWidth(screenWidth, fontSize) {
+        const avgCharWidth = fontSize * Math.random();
+        return Math.floor(screenWidth / avgCharWidth);
+    }
 
-    if (!wrapper) {
-        console.error("Ticker wrapper not found!");
+    // function computePiDigit(n) {
+    //     Big.DP = n + 2; // Set decimal precision
+    //     let pi = new Big(0);
+    //     let one = new Big(1);
+
+    //     for (let k = 0; k <= n; k++) {
+    //         let term = one.div(new Big(16).pow(k)).times(
+    //             new Big(4).div(new Big(8).times(k).plus(1))
+    //             .minus(new Big(2).div(new Big(8).times(k).plus(4)))
+    //             .minus(new Big(1).div(new Big(8).times(k).plus(5)))
+    //             .minus(new Big(1).div(new Big(8).times(k).plus(6)))
+    //         );
+    //         pi = pi.plus(term);
+    //     }
+
+    //     return pi.toString().substring(2, n + 2); // Remove "3." at the start
+    // }
+    //     return sum.toString().substr(2);
+    // }
+    // console.log(pi);
+
+    let piDigits = "3.";
+    const lines = 5;
+    const container = document.getElementById("tickerContainer");
+
+    if (!container) {
+        console.error("Ticker container not found!");
         return;
     }
-    console.log("Ticker wrapper found:", wrapper);
 
-    function updatePiTicker() {
-        piDigits += computePiDigit(piDigits.length);
-        console.log("Updated piDigits:", piDigits);
-        document.querySelectorAll(".scrolling-text").forEach((text, index) => {
-            text.textContent = piDigits;
-            text.style.animationDuration = `${10 + index}s`; // Stagger animation speed
-            console.log("Updated text content for line", index, text.textContent);
-        });
+    const screenWidth = getScreenWidth();
+    const fontSize = 24;
+    const numDigits = computeCharacterCountForWidth(screenWidth, fontSize);
+    // piDigits += computePiDigit(numDigits * 5);
+    console.log("Screen width:", screenWidth);
+    console.log("Computed number of digits for screen width:", numDigits);
+
+    function createScrollingText(lineIndex) {
+        let scrollingText = document.createElement("div");
+        scrollingText.classList.add("scrolling-text");
+        scrollingText.textContent = binaryPI; 
+        // piDigits;
+        scrollingText.style.animationDuration = `${Math.random() * (12 - 5) + 5}s`;
+        scrollingText.style.animationDelay = `${lineIndex * 2}s`;
+        scrollingText.style.top = `${lineIndex * 30}px`;
+
+        container.appendChild(scrollingText);
+        console.log("Added scrolling text for line", lineIndex, "Content:", scrollingText.textContent);
     }
 
     for (let i = 0; i < lines; i++) {
-        let container = document.createElement("div");
-        container.classList.add("ticker-container");
-        console.log("Created ticker-container for line", i);
-
-        let scrollingText = document.createElement("div");
-        scrollingText.classList.add("scrolling-text");
-        scrollingText.textContent = piDigits;
-        scrollingText.style.top = `${i * 30}px`; // Adjust spacing
-        scrollingText.style.animationDelay = `${i * 2}s`; // Stagger delay
-        
-        container.appendChild(scrollingText);
-        wrapper.appendChild(container);
-        console.log("Added scrolling text to container for line", i);
+        createScrollingText(i);
     }
 
-    setInterval(updatePiTicker, 2000); // Update every 2 seconds
+    // **Force DOM Reflow to Ensure Animation Works**
+    setTimeout(() => {
+        document.querySelectorAll(".scrolling-text").forEach(el => {
+            el.style.display = "block";
+        });
+    }, 100);
 });
