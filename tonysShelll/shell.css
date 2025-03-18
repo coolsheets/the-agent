@@ -1,0 +1,14 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: black;
+    color: lightgreen;
+}
+
+a {
+    color: lightgreen;
+}
+
+.blink-on {
+    background-color: lightgreen;
+    color: black;
+}

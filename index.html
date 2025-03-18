@@ -7,34 +7,33 @@
     <title>AI aGent for disruption</title>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <!-- <link rel='stylesheet' href='./htmlLightDark.css'> -->
-    <link rel='stylesheet' href='./default.css'>
-    <link rel="icon" type="image/x-icon" href="./orange.png" background-color="Canvas">    
+    <link rel='stylesheet' href='./styles/default.css'>
+    <link rel="icon" type="image/x-icon" href="./images/orange.png" background-color="Canvas">    
 </head>
 <body>
-    <div>
-        <header>
-            <div id="container">
-                <h1>aGent</h1>              
-                <h1>agEnt</h1>              
-                <h1>agenT</h1>              
-            </div>
-            <div id="face">
-                    <img src="./andy-transparent.png" alt="aGent" class="face" >
-            </div>
-            <div class="ticker-wrapper">
-                <div class="ticker-container" id="tickerContainer"></div>
-            </div>
-
-        </header>
-    </div>
-    <div class="ticker-wrapper">
+    <!-- <div> -->
+    <header class="flex-container">
+        <div id="container">
+            <h1>aGent</h1>              
+            <h1>agEnt</h1>              
+            <h1>agenT</h1>              
+        </div>
+        <div id="face">
+                <img src="./images/andy-transparent.png" alt="aGent" class="face" >
+        </div>
+        <div class="ticker-wrapper">
+            <div class="ticker-container" id="tickerContainer"></div>
+        </div>
+    </header>
+    <!-- </div> -->
+    <!-- <div class="ticker-wrapper">
         <div class="ticker-container" id="tickerContainer"></div>
-    </div>
+    </div> -->
     <div>
         <div id="terminal">
-            <p style="color:grey">aGent@aGency.<i>username</i>~$: Enter username (anonymous):<span class="cursor"></span></p>
+            <p style="color:var(--floGreen)">aGent@aGency.<i>username</i>~$: Enter username (anonymous):<span class="cursor"></span><input type="text" id="userName" name="userName"></p>
         </div>
     </div>
-        <script src="script.js"></script>
+        <script src="./scripts/script.js"></script>
     </body>
 </html>
