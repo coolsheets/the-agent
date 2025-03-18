@@ -1,15 +1,18 @@
 # To do
 
 ## In progress
-
-
-## To do list
-- enable user input via terminal (ask)
+- enable user input via terminal (see Tony's shell game)
 - make media friendly
+- organize files into folders
+## To do list
+- limit display width in media
 - on entry of user info switch to friendlier interaction
-- organize files into folders and clean up the trash
+- clean up the trash
 - see if there is a way to combine transformations (ask)
 - map all inter file links and clean up
+- add effect to face on hover and click
+- connect to database for user info
+- alternate universes based on entry and level of engagement
 
 ## Done
 - fix terminal location
