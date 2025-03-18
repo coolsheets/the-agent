@@ -1,76 +1,82 @@
 @font-face {
   font-family: 'DotGothic16';
-  src: url('./fonts/DotGothic16.ttf') format('truetype');
+  src: url('../fonts/DotGothic16.ttf') format('truetype');
+}
+@font-face {
   font-family: 'RetroComputer';
-  src: url('./fonts/retro_computer_personal_use.ttf') format('truetype');  
+  src: url('../fonts/retro_computer_personal_use.ttf') format('truetype');  
+}  
+@font-face {
   font-family: '8801';
-  src: url('./fonts/8801-DKnR.ttf') format('truetype');  
+  src: url('../fonts/8801-DKnR.ttf') format('truetype');  
 }
 
 :root {
-  --blink-color : grey;
-  --floGreen: #00ff00;
-  --floCyan: #57e9ef;
+  --blink-color : var(--floGreen);
+  --floGreen: hsla(120 100 50);
+  --floCyan: #19adae;
   --floMagenta: #d8208f;
   --floYellow: #faf34c;
 }
 
 * {
-    font-family:'RetroComputer', '8801', 'DotGothic16';
+  font-family: '8801', 'RetroComputer', 'DotGothic16';
 }
 
 header {
-  height: 310px;
-  display:flex;
-  flex-direction: row;
-  justify-content:flex-start;
+  height: 30vh; /* Use viewport height */
+  max-width: 100%;
+  display: flex;
+  /* flex-direction: row;
+  justify-content: flex-start; */
   font-size: large;
 }
 
-div {
-  width:fit-content;
-  height:fit-content;
+.flex-container {
+  display:flex
 }
 
 body {
-  font-family:'RetroComputer', 'DotGothic16', '8801';
+  display: flex;
+  flex-direction: column; /* Ensure flex direction is column */
+  max-width: 100%;
+  max-height: 100vh; /* Use viewport height */
+  font-family: '8801', 'RetroComputer', 'DotGothic16';
   align-content: flex-start;
   padding-bottom: 5rem;
   background-color: black;
   background-image: radial-gradient(
     rgba(0, 150, 0, 0.75), black 120%
   );
-  height: auto;
+  height: 100vh; /* Use viewport height */
   margin: 0;
 }
 
 h1 {
-  display:flex;
-  width:fit-content;
-  align-items:start;
+  display: flex;
+  width: fit-content;
+  align-items: start;
   padding: 7rem 0 0 4rem;
   margin: 0;
   font-size: 7rem;
   color: var(--floGreen);
-  position:absolute;
-  z-index:100;
-
-/* add Glitch from https://1stwebdesigner.com/trippy-css-distortion-effects*/
-animation: glitch1 2.5s infinite;
+  position: absolute;
+  /* z-index: 100; */
+  animation: glitch1 2.5s infinite;
 }
 
 h1:nth-child(2) {
   color: var(--floMagenta);
   animation: glitch2 2.5s infinite;
-  position:absolute;
-  z-index:100;
+  position: absolute;
+  z-index: 100;
 }
 
 h1:nth-child(3) {
   color: var(--floCyan);
   animation: glitch3 2.5s infinite;
-  position:absolute;
-  z-index:100;
+  position: absolute;
+  z-index: 100;
 }
 
 /*Keyframes*/
@@ -240,35 +246,57 @@ h1:nth-child(3) {
   }
 }
 
-h2,p {
+h2 {
   padding: 0 2%;
 }
 
-.face {
-  scale: -1 1;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;  
-  justify-content:center;
-  max-width: 70%;
-  min-width: 30%;
-  z-index: 1;
+p {
+  padding: 0 2%;
+  color: var(--floGreen);
+  font-size:larger;
+}
 
+#userName {
+  background-color: #121314;
+  border: hidden;
+  border-color: #121314;
+  font-size: large;
+}
+
+.face {
+  display:flex;
+  object-fit: contain;  
+  scale: -1 1;
+  flex-basis: 50%;
+  max-width: auto;
+  min-width: auto;
+  max-height: 30vh;
+  min-height: 30vh;
+  /* z-index: 1; */
+}
+
+#face {
+  display: flex;
+  object-fit: contain;
+}
+
+#face:hover {
+  
 }
 
 .binary {
-  color: rgba(6, 243, 6, 0.991);
+  color: var(--floGreen);
 }
 
-/* From ticker/styles.css this took a lot of effort battling with ChatGPT 4.0 CoPilot*/
 .ticker-wrapper {
+  max-width: 100%;
+  max-height: 20vh; /* Use viewport height */
   width: 35%;
-  height: 100vh;
+  height: 100vh; /* Use viewport height */
   display: flex;
+  flex: 1;
   flex-direction: row-reverse;
-  float:right;
+  float: right;
   z-index: -1;
 }
 
@@ -276,8 +304,7 @@ h2,p {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row-reverse;
-  float:right;
-  width: 800px; /* Manually set width */
+  float: right;
   height: auto;
 }
 
@@ -285,7 +312,7 @@ h2,p {
   position: absolute;
   white-space: nowrap;
   font-size: 24px;
-  color: #00ff00;
+  color: var(--floGreen);
   display: block;
   left: 100%; /* Start off-screen */
   opacity: 1;
@@ -294,42 +321,35 @@ h2,p {
 
 @keyframes scroll-left {
   0% {
-      left: 100%;
-      opacity: 1;
+    left: 100%;
+    opacity: 1;
   }
   35% {
-      left: 35%;
-      opacity: 0.0;
+    left: 35%;
+    opacity: 0.0;
   }
 }
 
-/* Terminal Window from https://codepen.io/nths/pen/VpLdMK */
-@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500");
-
 #terminal {
-  min-height: 700px;
-  min-width: 85lvw;
+  min-height: 70vh; /* Use viewport height */
+  min-width: 85vw;
   max-width: 75%;
-  margin: 5rem;
+  margin: 0 5em 5em 5em;
   border: 10px;
   border-color: #211d1d96;
   border-style: double;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   border-radius: 13px;
-  background-image: radial-gradient(#1D1F21, black 180%20%);
+  background-image: radial-gradient(#1D1F21, black 180% 20%);
   box-shadow: 0px 13px 17px -6px rgba(0, 0, 0, 0.38);
   position: absolute;
-    z-index: 100;
-
+  z-index: 100;
   letter-spacing: 0.05rem;
-  
-  /* from W3Schools input form NEEDS WORK*/
-
 }
 
 #terminal:hover {
-  transform: scale(1.1);
-  transform: translateY(-380px);
+  transform: scale(1.05);
+  /* transform: translateY(-80px); */
   box-shadow: 150px 38px 90px 0px rgba(0, 0, 0, 0.45);
 }
 
@@ -342,17 +362,18 @@ h2,p {
 .terminal-body {
   padding: 8px;
   background: darkgray;
-  color: #fff;
+  color: var(--floGreen);
+  /* color: #fff; */
   line-height: 25px;
   font-family: monospace, Quicksand, sans-serif;
 }
 
 .command {
-  color: #grey;
+  color: var(--floGreen);
 }
 
 .cursor {
-  color: grey;
+  color: var(--floGreen);
   display: inline-block;
   height: 1.1em;
   width: 0.5em;
@@ -362,6 +383,8 @@ h2,p {
   -ms-animation: 1s blink step-end infinite;
   -o-animation: 1s blink step-end infinite;
   animation: 1s blink step-end infinite;
+  z-index: 10
+  ;
 }
 
 @keyframes blink {
@@ -414,9 +437,9 @@ h2,p {
   }
 }
 
-
 footer {
   padding: 50px;
+  height: 10vh; /* Use viewport height */
 }
 
 footer a {
@@ -429,6 +452,21 @@ footer a:hover {
 }
 
 #container {
-  width: 70vw;
+  max-width: 100%;
+  width: 40vw;
   margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  /* .flex-container {
+    flex-direction: column; 
+  } */
+  #terminal {
+    max-width: 80vw;
+    max-height: 60vh;
+    margin: 0 5vw 5vw 5vw;
+  }
+  #container {
+    display:none;
+  }
 }

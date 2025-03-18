@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // console.log(pi);
 
     let piDigits = "3.";
-    const lines = 10;
+    const lines = 5;
     const container = document.getElementById("tickerContainer");
 
     if (!container) {
@@ -49,17 +49,20 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Screen width:", screenWidth);
     console.log("Computed number of digits for screen width:", numDigits);
 
+    const binaryPiTrunc = binaryPI.substring(0, (numDigits * 2))
+    // console.log(binaryPiTrunc);
+
     function createScrollingText(lineIndex) {
         let scrollingText = document.createElement("div");
         scrollingText.classList.add("scrolling-text");
-        scrollingText.textContent = binaryPI; 
+        scrollingText.textContent = binaryPiTrunc; 
         // piDigits;
         scrollingText.style.animationDuration = `${Math.random() * (12 - 5) + 5}s`;
         scrollingText.style.animationDelay = `${lineIndex * 2}s`;
         scrollingText.style.top = `${lineIndex * 30}px`;
 
         container.appendChild(scrollingText);
-        console.log("Added scrolling text for line", lineIndex, "Content:", scrollingText.textContent);
+        // console.log("Added scrolling text for line", lineIndex, "Content:", scrollingText.textContent);
     }
 
     for (let i = 0; i < lines; i++) {
