@@ -474,10 +474,12 @@ footer a:hover {
 
 #banner-device {
   display:none;
+  opacity:50;
 }
 
 #banner-laptop {
   display:inline;
+  opacity:50;
 }
 
 @media (max-width: 768px) {
