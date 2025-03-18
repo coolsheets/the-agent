@@ -347,7 +347,8 @@ p {
   letter-spacing: 0.05rem;
 }
 
-#aGency {
+#aiGency {
+  font-family: monospace;
   font-stretch:extra-expanded;
   align-items: center;
   font-display:var(--blink-color);
