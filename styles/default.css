@@ -331,6 +331,12 @@ p {
 }
 
 #terminal {
+  opacity: 50;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-align: center;
+  flex-grow: 0;
+  flex-shrink: 30%;
   min-height: 70vh; /* Use viewport height */
   min-width: 85vw;
   max-width: 75%;
@@ -369,6 +375,7 @@ p {
 
 .terminal-body {
   padding: 8px;
+  opacity: 50;
   background: darkgray;
   color: var(--floGreen);
   /* color: #fff; */
@@ -465,7 +472,15 @@ footer a:hover {
   margin: 0 auto;
 }
 
-@media (max-width: 600px) {
+#banner-device {
+  display:none;
+}
+
+#banner-laptop {
+  display:inline;
+}
+
+@media (max-width: 768px) {
   /* .flex-container {
     flex-direction: column; 
   } */
@@ -477,4 +492,32 @@ footer a:hover {
   #container {
     display:none;
   }
+
+  .ticker-wrapper {
+    display:none;
+  }
+
+  #banner-laptop {
+    display:none;
+  }
+
+  #banner-device {
+    display:inline;
+  }
+
+
+}
+
+/* @media only screen and (max-width: 600px) {
+  [data-alttext] > span {
+    display: none;
+  }
+  
+  [data-alttext]::before {
+    content: attr(data-alttext);
+  }
+} */
+
+.banner {
+  opacity: 50;
 }
