@@ -280,6 +280,10 @@ p {
   object-fit: contain;
 }
 
+#face:hover {
+  
+}
+
 .binary {
   color: var(--floGreen);
 }
