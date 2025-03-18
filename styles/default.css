@@ -347,6 +347,13 @@ p {
   letter-spacing: 0.05rem;
 }
 
+#aGency {
+  font-stretch:extra-expanded;
+  align-items: center;
+  font-display:var(--blink-color);
+
+}
+
 #terminal:hover {
   transform: scale(1.05);
   /* transform: translateY(-80px); */

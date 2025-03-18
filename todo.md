@@ -5,6 +5,8 @@
 - make media friendly
 - organize files into folders
 ## To do list
+- remove binary scroll from media
+- change terminal to display Press enter to continue with character image
 - limit display width in media
 - on entry of user info switch to friendlier interaction
 - clean up the trash
