@@ -481,8 +481,8 @@ footer a:hover {
   opacity:50;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 4) {
-/* @media (max-width: 768px) { */
+@media only screen and (max-width: 768px) {
+/* @media (-webkit-min-device-pixel-ratio: 4) { */
   /* .flex-container {
     flex-direction: column; 
   } */
