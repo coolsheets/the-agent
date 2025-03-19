@@ -1,12 +1,11 @@
 # To do
 
 ## In progress
-- change terminal to display Press enter to continue with character image
 - enable user input via terminal (see Tony's shell game)
 - make media friendly
 - organize files into folders
 ## To do list
-- remove binary scroll from media (May not be necessary)
+
 - limit display width in media
 - on entry of user info switch to friendlier interaction
 - clean up the trash
@@ -21,3 +20,5 @@
 - select better fonts
 - start new branch for sandbox and one for deploy
 - have terminal view expand to cover andy
+- remove binary scroll from media (May not be necessary)
+- change terminal to display Press enter to continue with character image
