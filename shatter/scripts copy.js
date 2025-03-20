@@ -17,7 +17,7 @@ let clickPosition = [imageWidth * 0.5, imageHeight * 0.5];
 
 window.onload = function () {
     // images from reddit/r/wallpapers
-    let urls = ["./andy-transparent.png"];
+    let urls = ["./andy-transparent-laplace.png", "./andy-transparent.png"];
 
     let loaded = 0;
     // very quick and dirty hack to load and display the first image asap
@@ -135,12 +135,9 @@ function shatter() {
         container.appendChild(fragment.canvas);
     }
 
-    // Remove the image after shattering
-    container.removeChild(images[imageIndex]);
-    images[imageIndex].removeEventListener('click', imageClickHandler);
-
-    // Set the background color to black
-    container.style.backgroundColor = 'black';
+    // Do not remove the image after shattering
+    // container.removeChild(images[imageIndex]);
+    // images[imageIndex].removeEventListener('click', imageClickHandler);
 }
 
 function shatterCompleteHandler() {

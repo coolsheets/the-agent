@@ -345,7 +345,7 @@ p {
   border-style: double;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   border-radius: 13px;
-  background-image: radial-gradient(#1D1F21, black 180% 20%);
+  background-image: radial-gradient(#14201c, black 180% 20%);
   box-shadow: 0px 13px 17px -6px rgba(0, 0, 0, 0.38);
   /* position: absolute; */
   z-index: 100;
@@ -481,8 +481,8 @@ footer a:hover {
   opacity:50;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 4) {
-/* @media (max-width: 768px) { */
+@media only screen and (max-width: 768px) {
+/* @media (-webkit-min-device-pixel-ratio: 4) { */
   /* .flex-container {
     flex-direction: column; 
   } */

@@ -1,7 +1,11 @@
 body {
-    font-family: 'Courier New', Courier, monospace;
-    background: black;
+    /* font-family: 'Courier New', Courier, monospace; */
+    /* background: black; */
+    font-family: '8801', 'RetroComputer', 'DotGothic16';
+    background-image: radial-gradient(#14201c, black 180% 20%);
     color: lightgreen;
+    font-size: x-large;
+    padding:2em;
 }
 
 a {
@@ -12,3 +16,4 @@ a {
     background-color: lightgreen;
     color: black;
 }
+
