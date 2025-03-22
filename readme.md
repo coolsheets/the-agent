@@ -1,4 +1,4 @@
-# aGent by aGency
+# aGent by ai.Gency
 ## Working name: alteredStates
 ### Purpose
 To try out styling and page layout using advanced css and a little javascript
