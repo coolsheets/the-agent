@@ -14,4 +14,4 @@ To try out styling and page layout using advanced css and a little javascript
 4. input form will be a challenge and may not be well received by users
 ### Previews
 <video controls src="alterStatesConcept.mp4" title="Title"></video>
-![alteredStates](alterStatesConcept.png)
+![alteredStates](images/alterStatesConcept.png)
